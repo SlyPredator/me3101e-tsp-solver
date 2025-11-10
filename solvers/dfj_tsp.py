@@ -11,7 +11,7 @@ class DFJ_Solver():
         dist_mat = df.to_numpy()
         return dist_mat
 
-    def solve_tsp_dfj(self, dist_mat, verbose, time_limit=300):
+    def solve_tsp_dfj(self, dist_mat, verbosity, time_limit=300):
         n = len(dist_mat)
         problem = pulp.LpProblem("DFJ_TSP_Solver", pulp.LpMinimize)
         x = [[pulp.LpVariable(f"x_{i}_{j}", cat="Binary") for j in range(n)] for i in range(n)]
@@ -23,7 +23,7 @@ class DFJ_Solver():
         for j in range(n):
             problem += pulp.lpSum(x[i][j] for i in range(n) if i != j) == 1, f"in_degree_{j}"
 
-        problem.solve(pulp.PULP_CBC_CMD(msg=verbose, timeLimit=time_limit))
+        problem.solve(pulp.PULP_CBC_CMD(msg=verbosity, timeLimit=time_limit))
         
         if pulp.LpStatus[problem.status] != "Optimal":
             return {"status": pulp.LpStatus[problem.status]}

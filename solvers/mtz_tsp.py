@@ -11,7 +11,7 @@ class MTZ_Solver():
         dist_mat = df.to_numpy()
         return dist_mat
 
-    def solve_tsp_mtz(self, dist_mat, verbose):
+    def solve_tsp_mtz(self, dist_mat, verbosity):
         n = len(dist_mat)
         problem = pulp.LpProblem("MTZ_TSP_Solver", pulp.LpMinimize)
         x = [[pulp.LpVariable(f"x_{i}_{j}", cat="Binary") for j in range(n)] for i in range(n)]
@@ -28,7 +28,7 @@ class MTZ_Solver():
                 if i != j:
                     problem += u[i] - u[j] + (n - 1) * x[i][j] <= n - 2
 
-        problem.solve(pulp.PULP_CBC_CMD(msg=verbose))
+        problem.solve(pulp.PULP_CBC_CMD(msg=verbosity))
 
         trip = []
         if pulp.LpStatus[problem.status] == "Optimal":
