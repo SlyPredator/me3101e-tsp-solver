@@ -78,4 +78,5 @@ This project solves and visualizes the Traveling Salesperson Problem using vario
 
 ## 📸 Screenshots
 
-<video width="630" height="300" src="assets/demo.webm" controls></video>
+[demo.webm](https://github.com/user-attachments/assets/b39ebcbf-02c1-489d-bdac-9ea503b23b40)
+
