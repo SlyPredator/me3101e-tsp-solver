@@ -61,7 +61,7 @@ class DFJ_Solver():
                     problem += (pulp.lpSum(x[i][j] for i in subtrip for j in subtrip if i != j) <= len(subtrip) - 1,
                         f"subtrip_elim_{iteration}_{subtrip[0]}")
 
-            problem.solve(pulp.PULP_CBC_CMD(msg=verbose, timeLimit=time_limit))
+            problem.solve(pulp.PULP_CBC_CMD(msg=verbosity, timeLimit=time_limit))
             
             if pulp.LpStatus[problem.status] != "Optimal":
                 break
