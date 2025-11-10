@@ -78,4 +78,4 @@ This project solves and visualizes the Traveling Salesperson Problem using vario
 
 ## 📸 Screenshots
 
-(Space for screenshots of the application in action, e.g., the animated tour plot, console output.)
+<video width="630" height="300" src="assets/demo.webm" controls></video>
