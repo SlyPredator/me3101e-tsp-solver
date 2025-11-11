@@ -68,6 +68,11 @@ This project solves and visualizes the Traveling Salesperson Problem using vario
 ├── README.md
 ├── assets
 │   └── dist_matrix.xlsx
+│   └── demo.webm      
+├── results              
+│   └── trips_10.txt
+│   └── trips_50.txt
+│   └── trips_100.txt
 ├── solvers
 │   ├── dfj_tsp.py
 │   └── mtz_tsp.py
@@ -77,6 +82,8 @@ This project solves and visualizes the Traveling Salesperson Problem using vario
 ```
 
 ## 📸 Screenshots
+
+A few verbose example results are present in the `results` folder so to as to see the outputs when `verbosity = 1` in `main.py`.
 
 [demo.webm](https://github.com/user-attachments/assets/b39ebcbf-02c1-489d-bdac-9ea503b23b40)
 
